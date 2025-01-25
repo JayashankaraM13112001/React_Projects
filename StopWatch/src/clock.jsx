@@ -1,42 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
+import DigitalClock from './components/digitalClock';
+import AnalogClock  from './components/analogClock';
+import StopWatch from './components/stopWatch';
 import './clock.css'
 
-function DigitalClock(){
+function Clocks(){
 
-    const [time, setTime] = useState(new Date());
-
-    useEffect(() => {
-        const IntervalId = setInterval(() => {
-            setTime(new Date());
-        },1000);
-
-        return () => {
-            clearInterval(IntervalId);
-        }
-    },[]);
-
-    function formatTime(){
-        let hours = time.getHours();
-        const mins = time.getMinutes();
-        const secs = time.getSeconds();
-        const meridiem  = hours>=12 ? "PM" : "AM";
-
-        hours = hours % 12 || 12;
-
-        return `${padZero(hours)}:${padZero(mins)}:${padZero(secs)} ${meridiem}`;
-    }
-
-    function padZero(num){
-        return num<10 ? "0"+num : num;
-    }
+    const [clockType, setClockType] = useState("DC");
 
     return (
-        <div className="clock-container">
-            <div className="clock">
-                <span>{formatTime()}</span>
+        <div className="container">
+            <div className="nav-bar">
+                <div className="analog" onClick={() => setClockType("AC")}>Analog Clock</div>
+                <div className="digital" onClick={() => setClockType("DC")}>Digital Clock</div>
+                <div className="stopwatch" onClick={() => setClockType("SW")}>Stopwatch</div>
+            </div>
+
+            <div className="clock-window">
+                {clockType === "AC" && <AnalogClock />}
+                {clockType === "SW" && <StopWatch />}
+                {clockType === "DC" && <DigitalClock />}
             </div>
         </div>
-    );
+    )
 }
 
-export default DigitalClock;
+export default Clocks;

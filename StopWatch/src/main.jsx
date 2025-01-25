@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import DigitalClock  from './clock'
+import Clocks from './clock'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <DigitalClock />
+    <Clocks />
   </StrictMode>,
 )
