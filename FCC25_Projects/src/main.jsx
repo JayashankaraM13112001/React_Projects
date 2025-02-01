@@ -1,9 +1,9 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import Accordion from './components/accordion/accordion'
+import StarRating from './components/star-rating/StarRating'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Accordion />
+    <StarRating noOfStars={10} />
   </StrictMode>,
 )

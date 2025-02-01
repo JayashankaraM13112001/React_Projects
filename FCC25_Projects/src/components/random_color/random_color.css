@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    margin: auto 10px;
+    min-width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 18px;
+    padding: 8px;
+    cursor: pointer;
+    background-color: rgb(206, 206, 206);
+}
+
+.btn:hover{
+    background-color: rgb(146, 145, 145);
+}
