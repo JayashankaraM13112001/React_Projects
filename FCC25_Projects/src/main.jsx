@@ -1,9 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import LightDarkMode from "./components/light-dark-mode";
-
+import WindowResize from "./components/window-resize/windowResize";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <LightDarkMode />
+    <WindowResize />
   </StrictMode>
 );
