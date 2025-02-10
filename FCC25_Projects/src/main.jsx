@@ -1,8 +1,9 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import WindowResize from "./components/window-resize/windowResize";
+import QRCodeGenerator from "./components/QRCodeGenerator/qrcode";
+
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <WindowResize />
+    <QRCodeGenerator />
   </StrictMode>
 );
